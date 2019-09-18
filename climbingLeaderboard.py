@@ -10,8 +10,4 @@ def climbingLeaderboard():
         while (n>0) and (i>=scores[n-1]):
             n-=1
         print(n+1)
-
-
-
-
 result=climbingLeaderboard()
