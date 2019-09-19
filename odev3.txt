@@ -1,0 +1,22 @@
+def solve():
+    n_count=6
+    n=[100,90,90,80,75,50]
+    alice_count=4
+    alice=[50,65,77,90,102]
+    listt=[]
+    for i in alice:
+        n.append(i)
+        m=set(n)
+        m=list(m)
+        m.sort()
+        m.reverse()
+        find=m.index(i)
+        find+=1
+        listt.append(find)
+        n.remove(i)
+    for i in listt:
+        print(i)
+    quit()
+print(solve())
+
+
