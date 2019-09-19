@@ -1,0 +1,33 @@
+def inputs():
+
+    liste=[]
+    for i in range(9):
+        number=int(input("Lutfen {} sayiyi giriniz".format(i+1)))
+        liste.append(number)
+    return liste
+def formingMagicSquare():
+    array = [1,2,3,4,5,6,7,8,9]
+    k = 15
+    liste=[]
+    for i in array:
+        for j in array:
+            for l in array:
+                if i+j+l==k:
+                    if [i,j,l] not in liste:
+                        liste.append([i,j,l])
+    liste3=[]
+    for i in liste:
+        for k in liste:
+            for l in liste:
+                if i[0]+k[0]+l[0]==15 and i[1]+k[1]+l[1]==15 and i[2]+k[2]+l[2]==15 and i[0]+k[1]+l[2]==15 and i[2]+k[1]+l[0]==15 and i[0]!=k[0] and i[0]!=k[1] and i[0]!=k[2] and i[1]!=k[0] and i[1]!=k[1] and i[1]!=k[2] and i[2]!=k[0] and i[2]!=k[1] and i[2]!=k[2] and i[0]!=l[0] and i[0]!=l[1] and i[0]!=l[2] and i[1]!=l[0] and i[1]!=l[1] and i[1]!=l[2] and i[2]!=l[0] and i[2]!=l[1] and i[2]!=l[2] and k[0]!=l[0] and k[0]!=l[1] and k[0]!=l[2] and k[1]!=l[0] and k[1]!=l[1] and k[1]!=l[2] and k[2]!=l[0] and k[2]!=l[1] and k[2]!=l[2] and i[0]!=i[1] and i[0]!=i[2] and k[0]!=k[1] and k[0]!=k[2] and l[0]!=l[1] and l[0]!=l[2]:
+                    liste3.append([i[0],i[1],i[2],k[0],k[1],k[2],l[0],l[1],l[2]])
+    s = inputs()
+    value=73
+    for j in liste3:
+        value1 = 0
+        for i in range(9):
+            value1 += abs(j[i] - s[i])
+        if value1 < value:
+            value=value1
+    return print(value)
+formingMagicSquare()
