@@ -29,11 +29,7 @@ def formingMagicSquare():
 
 magicSquares = []
 s = []
-
-
 for _ in range(3):
     s.append(list(map(int, input().split())))
 
-# magicSquareMaker()
-# minCostCalculator()
 formingMagicSquare()
